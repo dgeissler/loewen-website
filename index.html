@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Gasthaus zum Löwen | Restaurant in Forst seit 1994</title>
+  <meta name="description" content="Gasthaus zum Löwen in Forst (bei Bruchsal) – Frische, regionale Küche in gemütlichem Ambiente. Saisonale Spezialitäten, Nebenzimmer für Feiern. Reservieren: +49 7251 300896">
+  <link rel="canonical" href="https://www.loewen-forst.de/">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Gasthaus zum Löwen – Restaurant in Forst">
+  <meta property="og:description" content="Frische, regionale Küche in gemütlichem Ambiente. Seit 1994 geführt von Familie Geissler. Do–Sa ab 18 Uhr, So 11:30–14 Uhr.">
+  <meta property="og:image" content="images/hero-gastraum-og.jpg">
+  <meta property="og:url" content="https://www.loewen-forst.de/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Gasthaus zum Löwen">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Gasthaus zum Löwen",
+    "image": "images/hero-gastraum-og.jpg",
+    "url": "https://www.loewen-forst.de",
+    "telephone": "+497251300896",
+    "email": "info@loewen-forst.de",
+    "servesCuisine": ["Deutsch", "Regional", "Saisonal", "Schweizer Küche"],
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kirchstraße 8",
+      "addressLocality": "Forst",
+      "postalCode": "76694",
+      "addressRegion": "Baden-Württemberg",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.035,
+      "longitude": 8.575
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday","Saturday"], "opens": "18:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:30", "closes": "14:00" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "bestRating": "5",
+      "ratingCount": "90"
+    },
+    "acceptsReservations": "True",
+    "founder": {
+      "@type": "Person",
+      "name": "Yvonne Geissler"
+    },
+    "description": "Traditionelles Gasthaus mit über 100-jähriger Geschichte. Seit 1994 geführt von Familie Geissler. Frische, regionale und saisonale Küche."
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" as="image" href="images/hero-gastraum.jpg">
+  <link rel="preload" as="image" href="images/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --red: #8B1A2B;
+      --red-light: #A52538;
+      --red-dark: #6E1422;
+      --red-muted: #9C3044;
+      --cream: #F7F2EB;
+      --cream-dark: #EDE6D8;
+      --gold: #C4A35A;
+      --gold-light: #D4B86A;
+      --gold-dark: #8A6E2F;
+      --text: #3A2E25;
+      --text-light: #6B5D52;
+      --white: #FDFBF7;
+      --black: #1A1510;
+      --border: #D4C9B8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+
+    /* ═══════════════════════════════
+       HEADER
+       ═══════════════════════════════ */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(253,251,247,0.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); transition: box-shadow 0.3s; }
+    header.scrolled { box-shadow: 0 2px 20px rgba(26,21,16,0.08); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 2rem; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--red); }
+    .logo-img { height: 52px; width: auto; }
+
+    nav { display: flex; align-items: center; gap: 0.15rem; }
+    nav a { font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--text-light); padding: 0.5rem 0.85rem; border-radius: 4px; transition: color 0.25s, background 0.25s; }
+    nav a:hover, nav a.active { color: var(--red); background: rgba(139,26,43,0.06); }
+
+    .hamburger { display: none; background: none; border: none; cursor: pointer; width: 30px; height: 22px; position: relative; z-index: 1001; }
+    .hamburger span { display: block; width: 100%; height: 2px; background: var(--text); position: absolute; left: 0; transition: all 0.3s; }
+    .hamburger span:nth-child(1) { top: 1px; }
+    .hamburger span:nth-child(2) { top: 10px; }
+    .hamburger span:nth-child(3) { top: 19px; }
+    .hamburger.open span:nth-child(1) { top: 10px; transform: rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { top: 10px; transform: rotate(-45deg); }
+
+    .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(26,21,16,0.4); z-index: 999; }
+    .nav-overlay.open { display: block; }
+
+    /* ═══════════════════════════════
+       HERO
+       ═══════════════════════════════ */
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--red-dark); color: var(--cream); }
+    .hero-bg { position: absolute; inset: 0; background-image: url('images/hero-bg.jpg'); background-size: cover; background-position: center; opacity: 0.2; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(110,20,34,0.92) 0%, rgba(139,26,43,0.85) 50%, rgba(92,61,46,0.8) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 8rem 2rem 4rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+
+    .hero-ornament { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; color: var(--gold); }
+    .ornament-line { width: 50px; height: 1px; background: var(--gold); opacity: 0.6; }
+
+    .hero h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 600; line-height: 1.1; color: var(--cream); margin-bottom: 0.3rem; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero .subtitle { font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
+    .hero-text-side p { font-size: 1.15rem; color: rgba(247,242,235,0.8); max-width: 480px; margin-bottom: 1rem; }
+    .hero-text-side .signature { font-style: italic; color: var(--gold-light); margin-bottom: 2rem; }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+    .hero-hours { font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(247,242,235,0.5); }
+    .hero-hours span { color: rgba(247,242,235,0.7); }
+
+    .hero-image-side { position: relative; }
+    .hero-image-side img { border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); width: 100%; height: 420px; object-fit: cover; }
+    .hero-image-badge { position: absolute; bottom: -20px; right: -10px; background: var(--white); border-radius: 4px; padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .hero-image-badge img { height: 60px; width: auto; }
+
+    .hero-mobile-image { display: none; }
+
+    /* ═══════════════════════════════
+       BUTTONS
+       ═══════════════════════════════ */
+    .btn { display: inline-block; font-family: 'Josefin Sans', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 0.85rem 2.2rem; border-radius: 2px; transition: all 0.3s; cursor: pointer; }
+    .btn-primary { background: var(--gold); color: var(--black); border: 1px solid var(--gold); }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline-light { background: transparent; color: var(--cream); border: 1px solid rgba(247,242,235,0.35); }
+    .btn-outline-light:hover { border-color: var(--cream); background: rgba(247,242,235,0.08); }
+    .btn-red { background: var(--red); color: var(--cream); border: 1px solid var(--red); }
+    .btn-red:hover { background: var(--red-light); border-color: var(--red-light); }
+    .btn-outline { background: transparent; color: var(--red); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--red); background: rgba(139,26,43,0.04); }
+    .btn-gold { display: inline-block; font-family: 'Josefin Sans', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; border-radius: 2px; background: var(--gold); color: var(--black); border: 1px solid var(--gold); transition: all 0.3s; }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    /* ═══════════════════════════════
+       STICKY PHONE BAR (mobile only)
+       ═══════════════════════════════ */
+    .sticky-phone { display: none; }
+
+    /* ═══════════════════════════════
+       SECTIONS
+       ═══════════════════════════════ */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-label { font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--red-muted); margin-bottom: 0.6rem; }
+    .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; color: var(--red-dark); line-height: 1.2; margin-bottom: 1.5rem; }
+
+    /* ═══════════════════════════════
+       ÜBER UNS (merged section)
+       ═══════════════════════════════ */
+    #ueber-uns { background: var(--white); }
+
+    .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
+    .about-text p { color: var(--text-light); margin-bottom: 1.2rem; font-size: 1.08rem; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+
+    .about-image-stack { position: relative; }
+    .about-image-stack .img-main { border-radius: 4px; width: 100%; height: 400px; object-fit: cover; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .about-image-stack .img-overlay { position: absolute; bottom: -30px; left: -30px; width: 55%; height: 200px; object-fit: cover; border-radius: 4px; border: 4px solid var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+
+    .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+    .gallery-grid img { border-radius: 4px; width: 100%; height: 200px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: transform 0.4s; }
+    .gallery-grid img:hover { transform: scale(1.02); }
+
+    /* ═══════════════════════════════
+       SPEISEKARTE
+       ═══════════════════════════════ */
+    #speisekarte { background: var(--red-dark); color: var(--cream); text-align: center; position: relative; overflow: hidden; }
+    #speisekarte::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 30%, rgba(196,163,90,0.1) 0%, transparent 40%), radial-gradient(circle at 75% 70%, rgba(196,163,90,0.08) 0%, transparent 40%); pointer-events: none; }
+    #speisekarte .section-inner { position: relative; z-index: 1; }
+    #speisekarte .section-label { color: var(--gold-light); }
+    #speisekarte .section-title { color: var(--cream); }
+    #speisekarte p { color: rgba(247,242,235,0.75); max-width: 540px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
+    .speisekarte-silverware { margin: 0 auto 2rem; opacity: 0.4; height: 120px; }
+
+    /* ═══════════════════════════════
+       NEBENZIMMER
+       ═══════════════════════════════ */
+    #nebenzimmer { background: var(--cream); }
+    .nebenzimmer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .nebenzimmer-text p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.08rem; }
+    .nebenzimmer-visual { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 3rem; text-align: center; position: relative; }
+    .nebenzimmer-visual::before { content: ''; position: absolute; top: -1px; left: 2rem; right: 2rem; height: 3px; background: linear-gradient(90deg, var(--red), var(--red-light)); border-radius: 0 0 3px 3px; }
+    .nebenzimmer-visual .big-number { font-size: 5rem; font-weight: 700; color: var(--red); line-height: 1; }
+    .nebenzimmer-visual .big-label { font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-light); margin-top: 0.5rem; }
+    .nebenzimmer-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+    .nebenzimmer-gallery img { border-radius: 4px; width: 100%; height: 300px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
+    .nebenzimmer-gallery img:hover { transform: scale(1.015); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 3000; background: rgba(10,8,6,0.92); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 4px; box-shadow: 0 8px 40px rgba(0,0,0,0.4); object-fit: contain; }
+    .lightbox-close { position: absolute; top: 1.2rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.7); font-size: 2.2rem; cursor: pointer; z-index: 3001; transition: color 0.2s; line-height: 1; }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.4rem; transition: background 0.2s, color 0.2s; }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.2); color: #fff; }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+    .lightbox-counter { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); }
+
+    /* ═══════════════════════════════
+       KONTAKT
+       ═══════════════════════════════ */
+    #kontakt { background: var(--white); }
+    .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .kontakt-info h3 { font-size: 1.3rem; color: var(--red-dark); margin-bottom: 0.6rem; margin-top: 2rem; }
+    .kontakt-info h3:first-child { margin-top: 0; }
+    .kontakt-info p, .kontakt-info a { color: var(--text-light); font-size: 1rem; }
+    .kontakt-info a { text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color 0.3s, color 0.3s; }
+    .kontakt-info a:hover { color: var(--red); border-color: var(--red); }
+    .kontakt-image { border-radius: 4px; width: 100%; height: 300px; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 1.5rem; }
+
+    .oeffnungszeiten-card { background: var(--cream); border: 1px solid var(--border); border-radius: 4px; padding: 2.5rem; position: relative; }
+    .oeffnungszeiten-card::before { content: ''; position: absolute; top: -1px; left: 2rem; right: 2rem; height: 3px; background: linear-gradient(90deg, var(--red), var(--red-muted)); border-radius: 0 0 3px 3px; }
+    .oeffnungszeiten-card h3 { font-size: 1.5rem; color: var(--red-dark); margin-bottom: 1.5rem; }
+    .zeit-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: 1rem; }
+    .zeit-row:last-of-type { border-bottom: none; }
+    .zeit-day { color: var(--text); font-weight: 500; }
+    .zeit-time { color: var(--text-light); }
+
+    .stellenangebot { background: var(--cream); border: 1px solid var(--border); border-radius: 4px; padding: 1.8rem; margin-top: 2rem; }
+    .stellenangebot h3 { font-size: 1.15rem; color: var(--red-dark); margin-bottom: 0.5rem; }
+    .stellenangebot p { color: var(--text-light); font-size: 0.95rem; }
+
+    /* ═══════════════════════════════
+       FOOTER
+       ═══════════════════════════════ */
+    footer { background: var(--red-dark); color: rgba(247,242,235,0.6); padding: 3.5rem 2rem 2rem; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer-brand .logo-text { color: var(--cream); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .footer-brand .logo-text small { display: block; font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-dark); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.6; }
+    footer h4 { font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 1rem; }
+    footer a { color: rgba(247,242,235,0.6); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+    footer a:hover { color: var(--cream); }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-bottom { max-width: 1000px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(247,242,235,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+
+    /* ═══════════════════════════════
+       IMPRESSUM MODAL
+       ═══════════════════════════════ */
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(26,21,16,0.6); backdrop-filter: blur(4px); overflow-y: auto; padding: 2rem; }
+    .modal-overlay.open { display: flex; justify-content: center; align-items: flex-start; }
+    .modal-content { background: var(--white); border-radius: 6px; max-width: 760px; width: 100%; margin: 3rem auto; padding: 3rem; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .modal-close { position: absolute; top: 1.2rem; right: 1.5rem; background: none; border: none; cursor: pointer; font-size: 1.8rem; color: var(--text-light); line-height: 1; transition: color 0.2s; }
+    .modal-close:hover { color: var(--red); }
+
+    .reservation-popup { display: none; position: fixed; inset: 0; z-index: 2001; background: rgba(26,21,16,0.5); backdrop-filter: blur(3px); }
+    .reservation-popup.open { display: flex; justify-content: center; align-items: center; padding: 1.5rem; }
+    .reservation-popup-content { background: var(--white); border-radius: 6px; max-width: 420px; width: 100%; padding: 2.5rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .reservation-popup-content h3 { font-size: 1.5rem; color: var(--red-dark); margin-bottom: 0.8rem; }
+    .reservation-popup-content p { color: var(--text-light); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .reservation-popup-content .popup-buttons { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+    .reservation-popup-content .popup-buttons .btn { font-size: 0.7rem; padding: 0.75rem 1.6rem; }
+    .modal-content h2 { font-size: 2rem; color: var(--red-dark); margin-bottom: 1.5rem; }
+    .modal-content h3 { font-size: 1.2rem; color: var(--red-dark); margin-top: 2rem; margin-bottom: 0.5rem; }
+    .modal-content h3:first-of-type { margin-top: 0; }
+    .modal-content p, .modal-content li { color: var(--text-light); font-size: 0.95rem; margin-bottom: 0.5rem; line-height: 1.7; }
+    .modal-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .modal-content a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ═══════════════════════════════
+       ANIMATIONS
+       ═══════════════════════════════ */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in-delay-1 { transition-delay: 0.15s; }
+
+    /* ═══════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 2rem; padding-top: 7rem; }
+      .hero-image-side { display: none; }
+      .hero-mobile-image {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin: 0 auto;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      }
+      .hero-text-side { text-align: center; }
+      .hero-text-side p { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-ornament { justify-content: center; }
+      .hero-hours { text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; flex-direction: column; background: var(--white); padding: 5rem 2rem 2rem; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.35s ease; gap: 0.25rem; z-index: 1000; }
+      nav.open { right: 0; }
+      nav a { font-size: 0.9rem; padding: 0.75rem 1rem; width: 100%; }
+
+      .about-intro, .nebenzimmer-grid, .kontakt-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .gallery-grid, .nebenzimmer-gallery { grid-template-columns: 1fr 1fr; }
+      .gallery-grid img:first-child { grid-column: 1 / -1; }
+      .about-image-stack .img-overlay { position: static; width: 100%; height: 160px; margin-top: 1rem; border: none; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      section { padding: 4rem 1.5rem; }
+
+      /* Sticky phone bar */
+      .sticky-phone {
+        display: flex;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 998;
+        background: var(--red);
+        padding: 0.75rem 1.5rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+      }
+      .sticky-phone a {
+        color: var(--cream);
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .sticky-phone svg { width: 18px; height: 18px; fill: var(--cream); }
+
+      /* Extra bottom padding so footer isn't hidden behind sticky bar */
+      footer { padding-bottom: 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header id="header">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <img class="logo-img" width="80" height="52" src="images/logo.png" alt="Gasthaus zum Löwen Logo — Löwenwappen mit goldenem Rahmen">
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#speisekarte">Speisekarte</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Nav overlay for mobile menu close -->
+<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text-side fade-in">
+      <div class="hero-ornament">
+        <div class="ornament-line"></div>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0l2.5 7.5H20l-6 4.5 2.5 7.5L10 15l-6.5 4.5L6 12 0 7.5h7.5z"/></svg>
+        <div class="ornament-line"></div>
+      </div>
+      <p class="subtitle">Seit über 30 Jahren</p>
+      <h1>Gasthaus<br><em>zum Löwen</em></h1>
+      <p>Das Wirtshaus „zum Löwen" blickt auf eine mehr als 100-jährige Tradition zurück. Seit 1994 führen wir, Yvonne und Gunther Geissler, das Restaurant und begrüßen unsere Gäste mit Herz und frischer, regionaler Küche.</p>
+      <p class="signature">Ihre Familie Geissler</p>
+      <div class="hero-buttons">
+        <a href="tel:+497251300896" onclick="return checkReservationTime()" class="btn btn-primary">Tisch reservieren</a>
+        <a href="#speisekarte" class="btn btn-outline-light">Speisekarte</a>
+      </div>
+      <p class="hero-hours">
+        <span>Do – Sa ab 18 Uhr</span> · <span>So 11:30 – 14 Uhr</span>
+      </p>
+
+      <!-- Mobile: Bild unter dem Text -->
+      <img
+        class="hero-mobile-image"
+        width="800" height="500"
+        src="images/hero-gastraum.jpg"
+        alt="Blick in den gemütlichen Gastraum des Gasthaus zum Löwen mit warmer Beleuchtung"
+      >
+    </div>
+
+    <!-- Desktop: Bild rechts -->
+    <div class="hero-image-side fade-in fade-in-delay-1">
+      <img
+        width="800" height="500"
+        src="images/hero-gastraum.jpg"
+        alt="Blick in den gemütlichen Gastraum des Gasthaus zum Löwen mit warmer Beleuchtung"
+      >
+      <div class="hero-image-badge">
+        <img
+          width="160" height="95"
+          src="images/varta-siegel.jpg"
+          alt="Varta-Siegel 2026 — Auszeichnung für Gastronomie-Qualität"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ÜBER UNS (zusammengefasst) ═══ -->
+<section id="ueber-uns">
+  <div class="section-inner">
+    <div class="about-intro">
+      <div class="about-text fade-in">
+        <p class="section-label">Über uns</p>
+        <h2 class="section-title">Frische Küche,<br>gemütliches Ambiente</h2>
+        <p>Unser Anspruch ist es, Sie mit qualitativ hochwertigen Gerichten zu verwöhnen. Daher halten wir unsere Speisekarte bewusst klein, um alles <strong>frisch zubereitet</strong> servieren zu können. Wir richten unsere Zutaten je nach Saison aus und verarbeiten immer <strong>frische, regionale Produkte</strong>.</p>
+        <p>Für unsere Aktionswochen ist der Löwen bekannt: <strong>Schweizer Wochen</strong> nach Fastnacht, <strong>Spargelwochen</strong> im Mai und <strong>Wildspezialitäten</strong> im Herbst.</p>
+        <p>Die mit Altholz aus dem Schwarzwald gestalteten Räumlichkeiten erzeugen ein gemütliches Ambiente. Sonnige Farben und saisonal gedeckte Tische laden zum Verweilen ein.</p>
+      </div>
+      <div class="about-image-stack fade-in fade-in-delay-1">
+        <img class="img-main" width="600" height="594" src="images/familie-geissler.jpg" alt="Familie Geissler — Inhaberinnen des Gasthaus zum Löwen seit 1994">
+        <img class="img-overlay" width="400" height="410" src="images/gericht-teller.jpg" alt="Frisch angerichteter Teller mit saisonalen Zutaten">
+      </div>
+    </div>
+
+    <div class="gallery-grid fade-in">
+      <img width="700" height="460" src="images/gastraum-holz.jpg" alt="Der Hauptraum mit Schwarzwald-Holzvertäfelung und gedeckten Tischen">
+      <img width="400" height="270" src="images/gericht-spargel.jpg" alt="Saisonales Gericht — frischer Spargel mit Beilagen">
+      <img width="400" height="270" src="images/gericht-dessert.jpg" alt="Dessert-Kreation mit saisonalen Früchten">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPEISEKARTE ═══ -->
+<section id="speisekarte">
+  <div class="section-inner fade-in">
+    <img class="speisekarte-silverware" src="images/besteck-deko.png" alt="">
+    <p class="section-label">Kulinarisches</p>
+    <h2 class="section-title">Unsere Speisekarte</h2>
+    <p>Unsere regelmäßig wechselnde Speisekarte spiegelt die Saison wider. Entdecken Sie unser aktuelles Angebot.</p>
+    <!-- SPEISEKARTE PDF: Einfach die Datei "speisekarte.pdf" im selben Ordner ersetzen -->
+    <a href="speisekarte.pdf" target="_blank" class="btn-gold">Speisekarte ansehen (PDF)</a>
+  </div>
+</section>
+
+<!-- ═══ NEBENZIMMER ═══ -->
+<section id="nebenzimmer">
+  <div class="section-inner">
+    <div class="nebenzimmer-grid">
+      <div class="fade-in">
+        <p class="section-label">Feiern &amp; Events</p>
+        <h2 class="section-title">Das Nebenzimmer</h2>
+        <p class="nebenzimmer-text">Feiern Sie Ihre Hochzeit, Ihren Geburtstag oder ein Jubiläum? Unser Nebenzimmer eignet sich perfekt dafür. Gerne richten wir den Raum passend zu Ihrer Festlichkeit her.</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
+          <a href="mailto:info@loewen-forst.de?subject=Anfrage%20Festlichkeit" class="btn btn-red">Anfrage schicken</a>
+          <a href="tel:+497251300896" class="btn btn-outline">Anrufen</a>
+        </div>
+      </div>
+      <div class="nebenzimmer-visual fade-in fade-in-delay-1">
+        <div class="big-number">~50</div>
+        <div class="big-label">Personen Kapazität</div>
+      </div>
+    </div>
+    <div class="nebenzimmer-gallery fade-in">
+      <img src="images/nebenzimmer-1.jpg" alt="Nebenzimmer — Gesamtansicht mit festlich gedeckten Tischen und blauem Teppich" onclick="openLightbox(0)">
+      <img src="images/nebenzimmer-2.jpg" alt="Nebenzimmer — großer Raum mit mehreren gedeckten Tafeln und Holzvertäfelung" onclick="openLightbox(1)">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONTAKT ═══ -->
+<section id="kontakt">
+  <div class="section-inner">
+    <p class="section-label">Besuchen Sie uns</p>
+    <h2 class="section-title">Kontakt &amp; Öffnungszeiten</h2>
+    <div class="kontakt-grid" style="margin-top:2rem;">
+      <div class="kontakt-info fade-in">
+        <img class="kontakt-image" width="500" height="500" src="images/eingang.jpg" alt="Eingangsbereich des Gasthaus zum Löwen an der Kirchstraße">
+        <h3 style="margin-top:0;">Adresse</h3>
+        <p>Kirchstraße 8<br>76694 Forst</p>
+        <h3>Telefon</h3>
+        <p><a href="tel:+497251300896">+49 7251 300896</a></p>
+        <h3>E-Mail</h3>
+        <p><a href="mailto:info@loewen-forst.de">info@loewen-forst.de</a></p>
+        <h3>Reservierungen</h3>
+        <p>Gerne können Sie einen Tisch reservieren. Rufen Sie hierfür von Mo–Fr von 09:00–17:00 Uhr an.</p>
+        <div class="stellenangebot">
+          <h3 style="margin-top:0;">Stellenangebot</h3>
+          <p>Wir suchen Teilzeit-Beschäftigte im Service und in der Küche. Interesse? Rufen Sie uns gerne an Mo–Fr von 09:00–17:00 Uhr.</p>
+        </div>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <div class="oeffnungszeiten-card">
+          <h3>Öffnungszeiten</h3>
+          <div class="zeit-row">
+            <span class="zeit-day">Donnerstag – Samstag</span>
+            <span class="zeit-time">ab 18:00 Uhr</span>
+          </div>
+          <div class="zeit-row">
+            <span class="zeit-day">Sonntag</span>
+            <span class="zeit-time">11:30 – 14:00 Uhr</span>
+          </div>
+          <div class="zeit-row">
+            <span class="zeit-day">Montag – Mittwoch</span>
+            <span class="zeit-time">Ruhetag</span>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem; border-radius:4px; overflow:hidden; border:1px solid var(--border);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2609.504300112327!2d8.583529676543003!3d49.153035371373576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797a389634f4693%3A0x2103e8f7b52eafcf!2sGasthaus%20zum%20L%C3%B6wen!5e0!3m2!1sde!2sde!4v1776263436853!5m2!1sde!2sde" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Gasthaus zum Löwen auf Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPRESSUM MODAL (hidden by default) ═══ -->
+<div class="modal-overlay" id="impressumModal" onclick="if(event.target===this)closeImpressum()">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeImpressum()" aria-label="Schließen">&times;</button>
+    <h2>Impressum &amp; Datenschutz</h2>
+    <h3>Betreiber / Herausgeber</h3>
+    <p>Gasthaus „Zum Löwen"<br>Yvonne Geissler<br>Kirchstraße 8<br>76694 Forst</p>
+    <p>Telefon: +49 7251 300896<br>E-Mail: <a href="mailto:info@loewen-forst.de">info@loewen-forst.de</a><br>Umsatzsteuer-ID: DE 163495322</p>
+    <h3>Datenschutzerklärung</h3>
+    <p><strong>Verantwortliche Stelle:</strong> Gasthaus zum Löwen, Yvonne Geissler, Kirchstraße 8, 76694 Forst. Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten.</p>
+    <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+    <p>Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail.</p>
+    <h3>Recht auf Beschwerde</h3>
+    <p>Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank" rel="noopener">Liste der Datenschutzbeauftragten</a></p>
+    <h3>Weitere Rechte</h3>
+    <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
+    <h3>SSL-/TLS-Verschlüsselung</h3>
+    <p>Unsere Website nutzt eine SSL- bzw. TLS-Verschlüsselung zum Schutz der Übertragung vertraulicher Inhalte.</p>
+    <h3>Server-Log-Dateien</h3>
+    <p>Der Provider erhebt automatisch Informationen in Server-Log-Dateien:</p>
+    <ul>
+      <li>Besuchte Seite, Datum und Uhrzeit der Anfrage</li>
+      <li>Browsertyp und -version, Betriebssystem</li>
+      <li>Referrer URL, Hostname, IP-Adresse</li>
+    </ul>
+    <p>Grundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <h3>Cookies</h3>
+    <p>Unsere Website verwendet Cookies. Die Deaktivierung von Cookies kann eine eingeschränkte Funktionalität zur Folge haben. Grundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+    <h3>Google Analytics</h3>
+    <p>Unsere Website verwendet Google Analytics mit IP-Anonymisierung. <a href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> · <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener">Browser-Plugin zum Deaktivieren</a></p>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-text">Zum Löwen<small>Gasthaus in Forst</small></div>
+      <p style="margin-top:1rem;">Kirchstraße 8 · 76694 Forst<br><a href="tel:+497251300896">+49 7251 300896</a><br><a href="mailto:info@loewen-forst.de">info@loewen-forst.de</a></p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <h4>Öffnungszeiten</h4>
+      <p style="font-size: 0.95rem; line-height: 1.8;">Do – Sa: ab 18:00 Uhr<br>So: 11:30 – 14:00 Uhr<br>Mo – Mi: Ruhetag</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> Gasthaus zum Löwen · Forst</span>
+    <a href="javascript:void(0)" onclick="openImpressum()">Impressum &amp; Datenschutz</a>
+  </div>
+</footer>
+
+<!-- ═══ RESERVATION TIME POPUP ═══ -->
+<div class="reservation-popup" id="reservationPopup" onclick="if(event.target===this)closeReservationPopup()">
+  <div class="reservation-popup-content">
+    <h3>Hinweis</h3>
+    <p>Unsere Reservierungszeiten sind<br><strong>Mo – Fr von 09:00 bis 17:00 Uhr.</strong><br>Außerhalb dieser Zeiten erreichen Sie uns möglicherweise nicht.</p>
+    <div class="popup-buttons">
+      <a href="tel:+497251300896" class="btn btn-red" onclick="closeReservationPopup()">Trotzdem anrufen</a>
+      <button class="btn btn-outline" onclick="closeReservationPopup()">Schließen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Schließen">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)" aria-label="Vorheriges Bild">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)" aria-label="Nächstes Bild">&#8250;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<!-- ═══ STICKY PHONE BAR (mobile) ═══ -->
+<div class="sticky-phone">
+  <a href="tel:+497251300896" onclick="return checkReservationTime()">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.02l-2.2 2.19z"/></svg>
+    Jetzt reservieren
+  </a>
+</div>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav');
+    const overlay = document.getElementById('navOverlay');
+    const hamburger = document.querySelector('.hamburger');
+    nav.classList.toggle('open');
+    overlay.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  }
+
+  function closeMenu() {
+    document.getElementById('nav').classList.remove('open');
+    document.getElementById('navOverlay').classList.remove('open');
+    document.querySelector('.hamburger').classList.remove('open');
+  }
+
+  document.querySelectorAll('#nav a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  const sections = document.querySelectorAll('section[id], .hero');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 140) current = s.getAttribute('id') || 'home';
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Dynamic copyright year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Impressum modal
+  function openImpressum() {
+    document.getElementById('impressumModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeImpressum() {
+    document.getElementById('impressumModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeImpressum(); closeReservationPopup(); }
+  });
+
+  // Reservation time check
+  function checkReservationTime() {
+    const now = new Date();
+    const day = now.getDay(); // 0=So, 1=Mo, ..., 5=Fr, 6=Sa
+    const hour = now.getHours();
+    const isWeekday = day >= 1 && day <= 5;
+    const isDuringHours = hour >= 9 && hour < 17;
+    if (isWeekday && isDuringHours) {
+      return true; // Anruf direkt durchlassen
+    }
+    // Außerhalb der Zeiten: Popup zeigen
+    document.getElementById('reservationPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    return false; // Anruf erstmal blockieren
+  }
+  function closeReservationPopup() {
+    document.getElementById('reservationPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Lightbox gallery
+  const lightboxImages = [
+    'images/nebenzimmer-1.jpg',
+    'images/nebenzimmer-2.jpg'
+  ];
+  let lightboxIndex = 0;
+
+  function openLightbox(idx) {
+    lightboxIndex = idx;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function lightboxNav(dir) {
+    lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    updateLightbox();
+  }
+  function updateLightbox() {
+    document.getElementById('lightboxImg').src = lightboxImages[lightboxIndex];
+    document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+  }
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+  });
+</script>
+
+</body>
+</html>
