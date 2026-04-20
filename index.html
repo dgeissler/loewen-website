@@ -256,6 +256,64 @@
     .stellenangebot p { color: var(--text-light); font-size: 0.95rem; }
 
     /* ═══════════════════════════════
+       PRESSE
+       ═══════════════════════════════ */
+    .presse-strip {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .presse-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .presse-image {
+      flex-shrink: 0;
+      width: 200px;
+      cursor: pointer;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .presse-image:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+    .presse-text { flex: 1; }
+    .presse-quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--red-dark);
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+    }
+    .presse-quote::before { content: '„'; }
+    .presse-quote::after { content: '"'; }
+    .presse-attribution {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .presse-attribution strong { color: var(--text); font-weight: 500; }
+    .presse-click-hint {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--border);
+      margin-top: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .presse-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .presse-image { width: 160px; }
+      .presse-quote { font-size: 1.25rem; }
+    }
+
+    /* ═══════════════════════════════
        FOOTER
        ═══════════════════════════════ */
     footer { background: var(--red-dark); color: rgba(247,242,235,0.6); padding: 3.5rem 2rem 2rem; }
@@ -464,6 +522,18 @@
     </div>
   </div>
 </section>
+
+<!-- ═══ PRESSE ═══ -->
+<div class="presse-strip fade-in">
+  <div class="presse-inner">
+    <img class="presse-image" src="images/presse-artikel.png" alt="Zeitungsartikel: Schweizer Flair mitten in Forst — Gastronomenpaar Geißler feiert 60 Jahre Familientradition" onclick="openLightbox(2)">
+    <div class="presse-text" onclick="openLightbox(2)" style="cursor:pointer;">
+      <div class="presse-quote">Ich liebe den Kontakt zu meinen Gästen.</div>
+      <p class="presse-attribution"><strong>Yvonne Geißler</strong> — Schweizer Flair mitten in Forst</p>
+      <p class="presse-click-hint">Artikel lesen →</p>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ SPEISEKARTE ═══ -->
 <section id="speisekarte">
@@ -715,7 +785,8 @@
   // Lightbox gallery
   const lightboxImages = [
     'images/nebenzimmer-1.jpg',
-    'images/nebenzimmer-2.jpg'
+    'images/nebenzimmer-2.jpg',
+    'images/presse-artikel.png'
   ];
   let lightboxIndex = 0;
 
