@@ -190,8 +190,8 @@
     .about-image-stack .img-main { border-radius: 4px; width: 100%; height: 400px; object-fit: cover; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
     .about-image-stack .img-overlay { position: absolute; bottom: -30px; left: -30px; width: 55%; height: 200px; object-fit: cover; border-radius: 4px; border: 4px solid var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
 
-    .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; margin-top: 3rem; }
-    .gallery-grid img { border-radius: 4px; width: 100%; height: 200px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: transform 0.4s; }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+    .gallery-grid img { border-radius: 4px; width: 100%; height: 280px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: transform 0.4s; }
     .gallery-grid img:hover { transform: scale(1.02); }
 
     /* ═══════════════════════════════
@@ -330,7 +330,6 @@
 
       .about-intro, .nebenzimmer-grid, .kontakt-grid { grid-template-columns: 1fr; gap: 2rem; }
       .gallery-grid, .nebenzimmer-gallery { grid-template-columns: 1fr 1fr; }
-      .gallery-grid img:first-child { grid-column: 1 / -1; }
       .about-image-stack .img-overlay { position: static; width: 100%; height: 160px; margin-top: 1rem; border: none; }
 
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -454,15 +453,14 @@
         <p>Die mit Altholz aus dem Schwarzwald gestalteten Räumlichkeiten erzeugen ein gemütliches Ambiente. Sonnige Farben und saisonal gedeckte Tische laden zum Verweilen ein.</p>
       </div>
       <div class="about-image-stack fade-in fade-in-delay-1">
-        <img class="img-main" width="600" height="594" src="images/familie-geissler.jpg" alt="Familie Geissler — Inhaberinnen des Gasthaus zum Löwen seit 1994">
-        <img class="img-overlay" width="400" height="410" src="images/gericht-teller.jpg" alt="Frisch angerichteter Teller mit saisonalen Zutaten">
+        <img class="img-main" width="600" height="594" src="images/gericht-teller.jpg" alt="Frisch angerichteter Teller mit saisonalen Zutaten">
+        <img class="img-overlay" width="400" height="410" src="images/familie-geissler.jpg" alt="Familie Geissler — Inhaberinnen des Gasthaus zum Löwen seit 1994">
       </div>
     </div>
 
     <div class="gallery-grid fade-in">
-      <img width="700" height="460" src="images/gastraum-holz.jpg" alt="Der Hauptraum mit Schwarzwald-Holzvertäfelung und gedeckten Tischen">
-      <img width="400" height="270" src="images/gericht-spargel.jpg" alt="Saisonales Gericht — frischer Spargel mit Beilagen">
       <img width="400" height="270" src="images/gericht-dessert.jpg" alt="Dessert-Kreation mit saisonalen Früchten">
+      <img width="400" height="270" src="images/gericht-spargel.jpg" alt="Saisonales Gericht — frischer Spargel mit Beilagen">
     </div>
   </div>
 </section>
@@ -488,8 +486,7 @@
         <h2 class="section-title">Das Nebenzimmer</h2>
         <p class="nebenzimmer-text">Feiern Sie Ihre Hochzeit, Ihren Geburtstag oder ein Jubiläum? Unser Nebenzimmer eignet sich perfekt dafür. Gerne richten wir den Raum passend zu Ihrer Festlichkeit her.</p>
         <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
-          <a href="mailto:info@loewen-forst.de?subject=Anfrage%20Festlichkeit" class="btn btn-red">Anfrage schicken</a>
-          <a href="tel:+497251300896" class="btn btn-outline">Anrufen</a>
+          <a href="tel:+497251300896" onclick="return checkReservationTime()" class="btn btn-red">Anrufen</a>
         </div>
       </div>
       <div class="nebenzimmer-visual fade-in fade-in-delay-1">
@@ -515,14 +512,14 @@
         <h3 style="margin-top:0;">Adresse</h3>
         <p>Kirchstraße 8<br>76694 Forst</p>
         <h3>Telefon</h3>
-        <p><a href="tel:+497251300896">+49 7251 300896</a></p>
+        <p><a href="tel:+497251300896" onclick="return checkReservationTime()">+49 7251 300896</a></p>
         <h3>E-Mail</h3>
         <p><a href="mailto:info@loewen-forst.de">info@loewen-forst.de</a></p>
         <h3>Reservierungen</h3>
-        <p>Gerne können Sie einen Tisch reservieren. Rufen Sie hierfür von Mo–Fr von 09:00–17:00 Uhr an.</p>
+        <p>Gerne können Sie einen Tisch reservieren. Rufen Sie hierfür von Mo–Sa von 09:00–17:00 Uhr an.</p>
         <div class="stellenangebot">
           <h3 style="margin-top:0;">Stellenangebot</h3>
-          <p>Wir suchen Teilzeit-Beschäftigte im Service und in der Küche. Interesse? Rufen Sie uns gerne an Mo–Fr von 09:00–17:00 Uhr.</p>
+          <p>Wir suchen Teilzeit-Beschäftigte im Service und in der Küche. Interesse? Rufen Sie uns gerne an Mo–Sa von 09:00–17:00 Uhr.</p>
         </div>
       </div>
       <div class="fade-in fade-in-delay-1">
@@ -587,7 +584,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo-text">Zum Löwen<small>Gasthaus in Forst</small></div>
-      <p style="margin-top:1rem;">Kirchstraße 8 · 76694 Forst<br><a href="tel:+497251300896">+49 7251 300896</a><br><a href="mailto:info@loewen-forst.de">info@loewen-forst.de</a></p>
+      <p style="margin-top:1rem;">Kirchstraße 8 · 76694 Forst<br><a href="tel:+497251300896" onclick="return checkReservationTime()">+49 7251 300896</a><br><a href="mailto:info@loewen-forst.de">info@loewen-forst.de</a></p>
     </div>
     <div>
       <h4>Navigation</h4>
@@ -613,7 +610,7 @@
 <div class="reservation-popup" id="reservationPopup" onclick="if(event.target===this)closeReservationPopup()">
   <div class="reservation-popup-content">
     <h3>Hinweis</h3>
-    <p>Unsere Reservierungszeiten sind<br><strong>Mo – Fr von 09:00 bis 17:00 Uhr.</strong><br>Außerhalb dieser Zeiten erreichen Sie uns möglicherweise nicht.</p>
+    <p>Unsere Reservierungszeiten sind<br><strong>Mo – Sa von 09:00 bis 17:00 Uhr.</strong><br>Außerhalb dieser Zeiten erreichen Sie uns möglicherweise nicht.</p>
     <div class="popup-buttons">
       <a href="tel:+497251300896" class="btn btn-red" onclick="closeReservationPopup()">Trotzdem anrufen</a>
       <button class="btn btn-outline" onclick="closeReservationPopup()">Schließen</button>
@@ -700,7 +697,7 @@
     const now = new Date();
     const day = now.getDay(); // 0=So, 1=Mo, ..., 5=Fr, 6=Sa
     const hour = now.getHours();
-    const isWeekday = day >= 1 && day <= 5;
+    const isWeekday = day >= 1 && day <= 6; // Mo-Sa
     const isDuringHours = hour >= 9 && hour < 17;
     if (isWeekday && isDuringHours) {
       return true; // Anruf direkt durchlassen
