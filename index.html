@@ -314,6 +314,78 @@
     }
 
     /* ═══════════════════════════════
+       COOKIE BANNER
+       ═══════════════════════════════ */
+    .cookie-banner {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2500;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      padding: 1.2rem 2rem;
+    }
+    .cookie-banner.show { display: block; }
+    .cookie-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .cookie-text {
+      flex: 1;
+      font-size: 0.88rem;
+      color: var(--text-light);
+      min-width: 250px;
+      line-height: 1.5;
+    }
+    .cookie-text a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; }
+    .cookie-buttons { display: flex; gap: 0.75rem; flex-shrink: 0; }
+    .cookie-btn {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.5rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid;
+    }
+    .cookie-btn-accept { background: var(--red); color: var(--cream); border-color: var(--red); }
+    .cookie-btn-accept:hover { background: var(--red-light); border-color: var(--red-light); }
+    .cookie-btn-decline { background: transparent; color: var(--text-light); border-color: var(--border); }
+    .cookie-btn-decline:hover { border-color: var(--text-light); }
+
+    .maps-placeholder {
+      width: 100%;
+      height: 250px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      color: var(--text-light);
+      font-size: 0.88rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .maps-placeholder a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+
+    @media (max-width: 768px) {
+      .cookie-inner { flex-direction: column; text-align: center; }
+      .cookie-buttons { width: 100%; justify-content: center; }
+      /* Sticky phone bar above cookie banner */
+      .sticky-phone { bottom: 0; }
+      .cookie-banner.show ~ .sticky-phone { bottom: auto; }
+    }
+
+    /* ═══════════════════════════════
        FOOTER
        ═══════════════════════════════ */
     footer { background: var(--red-dark); color: rgba(247,242,235,0.6); padding: 3.5rem 2rem 2rem; }
@@ -529,7 +601,7 @@
     <img class="presse-image" src="images/presse-artikel.png" alt="Zeitungsartikel: Schweizer Flair mitten in Forst — Gastronomenpaar Geißler feiert 60 Jahre Familientradition" onclick="openLightbox(2)">
     <div class="presse-text" onclick="openLightbox(2)" style="cursor:pointer;">
       <div class="presse-quote">Ich liebe den Kontakt zu meinen Gästen.</div>
-      <p class="presse-attribution"><strong>BNN-Artikel</strong> — Schweizer Flair mitten in Forst</p>
+      <p class="presse-attribution"><strong>Yvonne Geißler</strong> — Schweizer Flair mitten in Forst</p>
       <p class="presse-click-hint">Artikel lesen →</p>
     </div>
   </div>
@@ -608,8 +680,12 @@
             <span class="zeit-time">Ruhetag</span>
           </div>
         </div>
-        <div style="margin-top:1.5rem; border-radius:4px; overflow:hidden; border:1px solid var(--border);">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2609.504300112327!2d8.583529676543003!3d49.153035371373576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797a389634f4693%3A0x2103e8f7b52eafcf!2sGasthaus%20zum%20L%C3%B6wen!5e0!3m2!1sde!2sde!4v1776263436853!5m2!1sde!2sde" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Gasthaus zum Löwen auf Google Maps"></iframe>
+        <div id="mapsContainer" style="margin-top:1.5rem; border-radius:4px; overflow:hidden; border:1px solid var(--border);">
+          <div class="maps-placeholder" id="mapsPlaceholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Karte wird nach Zustimmung zu Cookies geladen.</span>
+            <a onclick="acceptCookies()">Cookies akzeptieren und Karte laden</a>
+          </div>
         </div>
       </div>
     </div>
@@ -684,6 +760,20 @@
     <div class="popup-buttons">
       <a href="tel:+497251300896" class="btn btn-red" onclick="closeReservationPopup()">Trotzdem anrufen</a>
       <button class="btn btn-outline" onclick="closeReservationPopup()">Schließen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COOKIE BANNER ═══ -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-inner">
+    <p class="cookie-text">
+      Wir verwenden Google Maps, um Ihnen unseren Standort zu zeigen. Dabei werden Daten an Google übertragen.
+      <a href="javascript:void(0)" onclick="openImpressum()">Mehr erfahren</a>
+    </p>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Akzeptieren</button>
+      <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Ablehnen</button>
     </div>
   </div>
 </div>
@@ -814,6 +904,50 @@
     if (e.key === 'ArrowLeft') lightboxNav(-1);
     if (e.key === 'ArrowRight') lightboxNav(1);
   });
+
+  // Cookie Consent
+  const MAPS_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2609.504300112327!2d8.583529676543003!3d49.153035371373576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797a389634f4693%3A0x2103e8f7b52eafcf!2sGasthaus%20zum%20L%C3%B6wen!5e0!3m2!1sde!2sde!4v1776263436853!5m2!1sde!2sde';
+
+  function checkCookieConsent() {
+    const consent = getCookie('cookie_consent');
+    if (consent === 'accepted') {
+      loadMaps();
+    } else if (consent === 'declined') {
+      // Karte bleibt Platzhalter
+    } else {
+      document.getElementById('cookieBanner').classList.add('show');
+    }
+  }
+
+  function acceptCookies() {
+    setCookie('cookie_consent', 'accepted', 365);
+    document.getElementById('cookieBanner').classList.remove('show');
+    loadMaps();
+  }
+
+  function declineCookies() {
+    setCookie('cookie_consent', 'declined', 365);
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+
+  function loadMaps() {
+    const container = document.getElementById('mapsContainer');
+    if (!container) return;
+    container.innerHTML = '<iframe src="' + MAPS_URL + '" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Gasthaus zum Löwen auf Google Maps"></iframe>';
+  }
+
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  checkCookieConsent();
 </script>
 
 </body>
