@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Gasthaus zum Löwen | Restaurant in Forst seit 1994</title>
-  <meta name="description" content="Gasthaus zum Löwen in Forst (bei Bruchsal) – Frische, regionale Küche in gemütlichem Ambiente. Saisonale Spezialitäten, Nebenzimmer für Feiern. Reservieren: +49 7251 300896">
-  <link rel="canonical" href="https://www.loewen-forst.de/">
+  <title>Gasthaus zum Löwen | Restaurant in Forst bei Bruchsal</title>
+  <meta name="description" content="Gasthaus zum Löwen in Forst bei Bruchsal – Frische, regionale Küche seit 1994. Saisonale Spezialitäten, Nebenzimmer für Feiern bis 50 Personen. Do–Sa ab 18 Uhr, So Mittagstisch. Reservieren: +49 7251 300896">
+  <meta name="keywords" content="Restaurant Forst, Gasthaus Forst, Essen Bruchsal, Restaurant Bruchsal, Gasthaus Löwen, Nebenzimmer Feier, Schweizer Küche Baden, regionale Küche Kraichgau">
+  <meta name="geo.region" content="DE-BW">
+  <meta name="geo.placename" content="Forst">
+  <meta name="geo.position" content="49.153035;8.583529">
+  <meta name="ICBM" content="49.153035, 8.583529">
+  <link rel="canonical" href="https://loewen-forst.de/">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="restaurant">
   <meta property="og:title" content="Gasthaus zum Löwen – Restaurant in Forst">
   <meta property="og:description" content="Frische, regionale Küche in gemütlichem Ambiente. Seit 1994 geführt von Familie Geissler. Do–Sa ab 18 Uhr, So 11:30–14 Uhr.">
-  <meta property="og:image" content="images/hero-gastraum-og.jpg">
-  <meta property="og:url" content="https://www.loewen-forst.de/">
+  <meta property="og:image" content="https://loewen-forst.de/images/hero-gastraum-og.jpg">
+  <meta property="og:url" content="https://loewen-forst.de/">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Gasthaus zum Löwen">
 
@@ -23,10 +28,12 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Gasthaus zum Löwen",
-    "image": "images/hero-gastraum-og.jpg",
-    "url": "https://www.loewen-forst.de",
+    "alternateName": "Zum Löwen Forst",
+    "image": "https://loewen-forst.de/images/hero-gastraum-og.jpg",
+    "url": "https://loewen-forst.de",
     "telephone": "+497251300896",
     "email": "info@loewen-forst.de",
+    "menu": "https://loewen-forst.de/speisekarte.pdf",
     "servesCuisine": ["Deutsch", "Regional", "Saisonal", "Schweizer Küche"],
     "priceRange": "€€",
     "address": {
@@ -39,9 +46,10 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 49.035,
-      "longitude": 8.575
+      "latitude": 49.153035,
+      "longitude": 8.583529
     },
+    "hasMap": "https://www.google.com/maps/place/Gasthaus+zum+L%C3%B6wen/@49.153035,8.583529,17z/",
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday","Saturday"], "opens": "18:00", "closes": "23:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:30", "closes": "14:00" }
@@ -53,11 +61,14 @@
       "ratingCount": "90"
     },
     "acceptsReservations": "True",
+    "sameAs": [
+      "https://www.facebook.com/loewenforst/"
+    ],
     "founder": {
       "@type": "Person",
       "name": "Yvonne Geissler"
     },
-    "description": "Traditionelles Gasthaus mit über 100-jähriger Geschichte. Seit 1994 geführt von Familie Geissler. Frische, regionale und saisonale Küche."
+    "description": "Traditionelles Gasthaus in Forst bei Bruchsal mit über 100-jähriger Geschichte. Seit 1994 geführt von Familie Geissler. Frische, regionale und saisonale Küche. Nebenzimmer für Feiern bis 50 Personen."
   }
   </script>
 
@@ -601,7 +612,7 @@
     <img class="presse-image" src="images/presse-artikel.png" alt="Zeitungsartikel: Schweizer Flair mitten in Forst — Gastronomenpaar Geißler feiert 60 Jahre Familientradition" onclick="openLightbox(2)">
     <div class="presse-text" onclick="openLightbox(2)" style="cursor:pointer;">
       <div class="presse-quote">Ich liebe den Kontakt zu meinen Gästen.</div>
-      <p class="presse-attribution"><strong>BNN-Artikel</strong> — Schweizer Flair mitten in Forst</p>
+      <p class="presse-attribution"><strong>Yvonne Geißler</strong> — Schweizer Flair mitten in Forst</p>
       <p class="presse-click-hint">Artikel lesen →</p>
     </div>
   </div>
@@ -748,7 +759,11 @@
   </div>
   <div class="footer-bottom">
     <span>&copy; <span id="year"></span> Gasthaus zum Löwen · Forst</span>
-    <a href="javascript:void(0)" onclick="openImpressum()">Impressum &amp; Datenschutz</a>
+    <span>
+      <a href="javascript:void(0)" onclick="openImpressum()">Impressum &amp; Datenschutz</a>
+      <span style="margin:0 0.4rem; opacity:0.3;">·</span>
+      <a href="https://plaintly.de" target="_blank" rel="noopener" style="opacity:0.4; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.4'">Website by plaintly.de</a>
+    </span>
   </div>
 </footer>
 
