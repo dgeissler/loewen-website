@@ -426,6 +426,11 @@
     .reservation-popup-content p { color: var(--text-light); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6; }
     .reservation-popup-content .popup-buttons { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
     .reservation-popup-content .popup-buttons .btn { font-size: 0.7rem; padding: 0.75rem 1.6rem; }
+    /* Telefon-Störung Popup */
+    #phonePopup { z-index: 2600; }
+    .phone-notice-icon { font-size: 2.6rem; line-height: 1; margin-bottom: 0.6rem; }
+    .phone-notice-number { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; font-weight: 700; color: var(--red-dark); letter-spacing: 0.5px; text-decoration: none; margin-bottom: 1.5rem; }
+    .phone-notice-number:hover { color: var(--red); }
     .modal-content h2 { font-size: 2rem; color: var(--red-dark); margin-bottom: 1.5rem; }
     .modal-content h3 { font-size: 1.2rem; color: var(--red-dark); margin-top: 2rem; margin-bottom: 0.5rem; }
     .modal-content h3:first-of-type { margin-top: 0; }
@@ -779,6 +784,20 @@
   </div>
 </div>
 
+<!-- ═══ TELEFON-STÖRUNG POPUP ═══ -->
+<div class="reservation-popup" id="phonePopup" onclick="if(event.target===this)closePhonePopup()">
+  <div class="reservation-popup-content">
+    <div class="phone-notice-icon" aria-hidden="true">📵</div>
+    <h3>Telefon aktuell gestört</h3>
+    <p>Unser Festnetz ist derzeit leider nicht erreichbar.<br>Bitte erreichen Sie uns vorübergehend unter dieser Nummer:</p>
+    <a href="tel:+491774948538" class="phone-notice-number">+49 177 4948538</a>
+    <div class="popup-buttons">
+      <a href="tel:+491774948538" class="btn btn-red" onclick="closePhonePopup()">Jetzt anrufen</a>
+      <button class="btn btn-outline" onclick="closePhonePopup()">Schließen</button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ COOKIE BANNER ═══ -->
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-inner">
@@ -864,8 +883,21 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeImpressum(); closeReservationPopup(); }
+    if (e.key === 'Escape') { closeImpressum(); closeReservationPopup(); closePhonePopup(); }
   });
+
+  // Telefon-Störung Hinweis (einmal pro Sitzung)
+  function showPhonePopup() {
+    try { if (sessionStorage.getItem('phoneNoticeDismissed')) return; } catch (e) {}
+    document.getElementById('phonePopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePhonePopup() {
+    document.getElementById('phonePopup').classList.remove('open');
+    document.body.style.overflow = '';
+    try { sessionStorage.setItem('phoneNoticeDismissed', '1'); } catch (e) {}
+  }
+  setTimeout(showPhonePopup, 600);
 
   // Reservation time check
   function checkReservationTime() {
