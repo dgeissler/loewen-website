@@ -287,14 +287,13 @@
       border-top: 1px solid var(--border);
     }
     .presse-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
+      display: grid;
+      grid-template-columns: 200px 1fr;
       align-items: center;
       gap: 3rem;
     }
     .presse-image {
-      flex-shrink: 0;
+      justify-self: center;
       width: 200px;
       height: auto;
       cursor: pointer;
@@ -321,17 +320,29 @@
       color: var(--text-light);
     }
     .presse-attribution strong { color: var(--text); font-weight: 500; }
+    .presse-date {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 0.35rem;
+    }
     .presse-click-hint {
+      display: inline-block;
       font-family: 'Josefin Sans', sans-serif;
       font-size: 0.65rem;
       letter-spacing: 0.1em;
       color: var(--border);
       margin-top: 0.8rem;
       text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
     }
+    a.presse-click-hint:hover { color: var(--red); }
 
     @media (max-width: 768px) {
-      .presse-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .presse-inner { grid-template-columns: 1fr; justify-items: center; gap: 1.5rem; text-align: center; }
       .presse-image { width: 160px; }
       .presse-quote { font-size: 1.25rem; }
     }
@@ -623,10 +634,11 @@
   <div class="presse-list">
     <div class="presse-inner">
       <img class="presse-image" width="792" height="975" loading="lazy" src="images/presse-artikel_2.png" alt="Zeitungsartikel: Gasthaus zum Löwen in Forst — Darum kommen Gäste seit 32 Jahren" onclick="openLightbox(3)">
-      <div class="presse-text" onclick="openLightbox(3)" style="cursor:pointer;">
+      <div class="presse-text">
         <div class="presse-quote">Heimelige Atmosphäre, perfekter Service, zuvorkommende Gastfreundschaft</div>
         <p class="presse-attribution"><strong>BNN-Artikel</strong> — Darum kommen Gäste seit 32 Jahren</p>
-        <p class="presse-click-hint">Artikel lesen →</p>
+        <p class="presse-date">26. August 2026</p>
+        <a class="presse-click-hint" href="https://bnn.de/kraichgau/bruchsal/forst/gasthaus-zum-loewen-in-forst-seit-32-jahren-stehen-die-geisslers-bereit" target="_blank" rel="noopener">Artikel lesen →</a>
       </div>
     </div>
     <div class="presse-inner">
@@ -634,6 +646,7 @@
       <div class="presse-text" onclick="openLightbox(2)" style="cursor:pointer;">
         <div class="presse-quote">Ich liebe den Kontakt zu meinen Gästen.</div>
         <p class="presse-attribution"><strong>BNN-Artikel</strong> — Schweizer Flair mitten in Forst</p>
+        <p class="presse-date">3. Februar 2025</p>
         <p class="presse-click-hint">Artikel lesen →</p>
       </div>
     </div>
