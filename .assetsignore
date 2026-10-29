@@ -1,0 +1,8 @@
+# Files in the repo root that must not be served on loewen-forst.de
+# (Cloudflare Workers static assets, gitignore syntax)
+*.md
+*.sh
+*.pptx
+wrangler.jsonc
+.gitignore
+.claude
